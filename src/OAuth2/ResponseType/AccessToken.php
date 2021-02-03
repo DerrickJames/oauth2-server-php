@@ -94,6 +94,7 @@ class AccessToken implements AccessTokenInterface
     public function createAccessToken($client_id, $user_id, $scope = null, $includeRefreshToken = true)
     {
         $token = array(
+            "user_id" => $user_id,
             "access_token" => $this->generateAccessToken(),
             "expires_in" => $this->config['access_lifetime'],
             "token_type" => $this->config['token_type'],
